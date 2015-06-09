@@ -4,7 +4,11 @@
 RSA Crypt
 =========
 
-It generates a public and private key and encrypts and decrypts the data with the help they are even.
+This class can RSA generate keys and encrypt data using OpenSSL.
+
+It can generate public and private RSA keys of given length calling the openssl program.
+
+The class and also encrypt data with a given public key file and decrypt data with a given private key file.
 
 
 ## Requirements
