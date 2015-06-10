@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/dmamontov/rsacrypt.svg?branch=master)](https://travis-ci.org/dmamontov/rsacrypt)
 [![Latest Stable Version](https://poser.pugx.org/dmamontov/rsacrypt/v/stable.svg)](https://packagist.org/packages/dmamontov/rsacrypt)
 [![License](https://poser.pugx.org/dmamontov/rsacrypt/license.svg)](https://packagist.org/packages/dmamontov/rsacrypt)
 
@@ -12,7 +13,7 @@ The class and also encrypt data with a given public key file and decrypt data wi
 
 
 ## Requirements
-* PHP version ~5.3.0
+* PHP version ~5.3.3
 
 ## Installation
 
