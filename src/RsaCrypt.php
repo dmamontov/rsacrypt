@@ -115,7 +115,7 @@ class RsaCrypt
 
     /**
      * Initializes public key.
-     * @param integer $key
+     * @param string $key
      * @return boolean
      * @access public
      * @final
@@ -144,7 +144,7 @@ class RsaCrypt
 
     /**
      * Initializes private key.
-     * @param integer $key
+     * @param string $key
      * @return mixed
      * @access public
      * @final
@@ -174,7 +174,7 @@ class RsaCrypt
     /**
      * Data encryption.
      * @param string $data
-     * @return string|boolean
+     * @return mixed
      * @access public
      * @final
      */
@@ -200,7 +200,7 @@ class RsaCrypt
     /**
      * Decrypt data.
      * @param string $data
-     * @return string|boolean
+     * @return mixed
      * @access public
      * @final
      */
