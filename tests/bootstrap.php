@@ -40,15 +40,7 @@
  * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
  * @since     File available since Release 1.0.2
  */
- 
-require_once 'vendor/autoload.php';
 
-$crypt = new RsaCrypt;
-
-$crypt->genKeys(512);
-$crypt->setPublicKey('public.pem');
-$crypt->setPrivateKey('private.pem');
-$data = $crypt->encrypt("Test Crypt");
-
-echo $data;
-echo $crypt->decrypt($data);
+if (class_exists('RsaCrypt') == false) {
+    require __DIR__ . '/../src/RsaCrypt.php';
+}
