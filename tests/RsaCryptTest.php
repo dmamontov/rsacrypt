@@ -55,17 +55,6 @@
  
 class RsaCryptTest extends PHPUnit_Framework_TestCase
 {
-    public function testSupport()
-    {
-        $crypt = null;
-        try {
-            $crypt = new RsaCrypt();
-        } catch (\RuntimeException $e) {
-        }
-
-        $this->assertNotNull($crypt);
-    }
-
     public function testGeneratedKeys()
     {
         $crypt = null;
