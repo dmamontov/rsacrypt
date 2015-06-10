@@ -57,11 +57,7 @@ class RsaCryptTest extends PHPUnit_Framework_TestCase
 {
     public function testSupport()
     {
-        $this->assertTrue(function_exists('openssl_get_publickey'));
-        $this->assertTrue(function_exists('openssl_public_encrypt'));
-        $this->assertTrue(function_exists('openssl_get_privatekey'));
-        $this->assertTrue(function_exists('openssl_private_decrypt'));
-
+        $crypt = null;
         try {
             $crypt = new RsaCrypt();
         } catch (\RuntimeException $e) {
@@ -72,33 +68,35 @@ class RsaCryptTest extends PHPUnit_Framework_TestCase
 
     public function testGeneratedKeys()
     {
+        $crypt = null;
         try {
             $crypt = new RsaCrypt();
         } catch (\RuntimeException $e) {
         }
 
         if (is_null($crypt) == false) {
+            $sucess = null;
             try {
                 $sucess = $crypt->genKeys(512);
             } catch (\RuntimeException $e) {
             }
             $this->assertNotNull($sucess);
-            unset($sucess);
 
+            $sucess = null;
             try {
                 $sucess = $crypt->genKeys(1024);
             } catch (\RuntimeException $e) {
             }
             $this->assertNotNull($sucess);
-            unset($sucess);
 
+            $sucess = null;
             try {
                 $sucess = $crypt->genKeys(999);
             } catch (\RuntimeException $e) {
             }
             $this->assertNull($sucess);
-            unset($sucess);
 
+            $sucess = null;
             try {
                 $sucess = $crypt->genKeys();
             } catch (\RuntimeException $e) {
@@ -132,28 +130,29 @@ class RsaCryptTest extends PHPUnit_Framework_TestCase
 
     public function testSetAndGetKeys()
     {
+        $crypt = null;
         try {
             $crypt = new RsaCrypt();
         } catch (\RuntimeException $e) {
         }
 
         if (is_null($crypt) == false) {
+            $sucess = null;
             try {
                 $sucess = $crypt->setPublicKey(__DIR__ . '/.files/public.pem');
             } catch (\RuntimeException $e) {
             }
             $this->assertTrue($sucess);
-            unset($sucess);
 
             $this->assertNotFalse($crypt->getPublicKey());
             $this->assertEquals($crypt->getPublicKey(), __DIR__ . '/.files/public.pem');
 
+            $sucess = null;
             try {
                 $sucess = $crypt->setPrivateKey(__DIR__ . '/.files/private.pem');
             } catch (\RuntimeException $e) {
             }
             $this->assertTrue($sucess);
-            unset($sucess);
 
             $this->assertNotFalse($crypt->getPrivateKey());
             $this->assertEquals($crypt->getPrivateKey(), __DIR__ . '/.files/private.pem');
@@ -162,6 +161,7 @@ class RsaCryptTest extends PHPUnit_Framework_TestCase
 
     public function testEncryptAndDecrypt()
     {
+        $crypt = null;
         try {
             $crypt = new RsaCrypt();
         } catch (\RuntimeException $e) {
@@ -178,12 +178,14 @@ class RsaCryptTest extends PHPUnit_Framework_TestCase
             } catch (\RuntimeException $e) {
             }
 
+            $encrypt = null;
             try {
                 $encrypt = $crypt->encrypt('Test encrypt');
             } catch (\RuntimeException $e) {
             }
             $this->assertNotNull($encrypt);
 
+            $encrypt = $decrypt;
             try {
                 $decrypt = $crypt->decrypt($encrypt);
             } catch (\RuntimeException $e) {
