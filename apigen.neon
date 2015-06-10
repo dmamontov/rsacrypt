@@ -22,6 +22,6 @@ internal: true
 php: false
 tree: false
 deprecated: false
-todo: true
+todo: false
 destination: ../rsacrypt.pages/
 download: false
