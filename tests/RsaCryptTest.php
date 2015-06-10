@@ -185,7 +185,7 @@ class RsaCryptTest extends PHPUnit_Framework_TestCase
             }
             $this->assertNotNull($encrypt);
 
-            $encrypt = $decrypt;
+            $decrypt = $decrypt;
             try {
                 $decrypt = $crypt->decrypt($encrypt);
             } catch (\RuntimeException $e) {
