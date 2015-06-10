@@ -11,6 +11,7 @@ It can generate public and private RSA keys of given length calling the openssl 
 
 The class and also encrypt data with a given public key file and decrypt data with a given private key file.
 
+[More information](http://dmamontov.github.io/rsacrypt)
 
 ## Requirements
 * PHP version ~5.3.3
