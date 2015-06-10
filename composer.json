@@ -3,7 +3,7 @@
     "description": "Data encryption using public and private keys.",
     "type": "library",
     "keywords": ["crypt", "data", "public", "private", "openssl"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "BSD-3-Clause",
     "homepage": "http://www.slobel.ru/",
     "authors": [
