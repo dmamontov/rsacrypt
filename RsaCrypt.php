@@ -38,7 +38,7 @@
  * @author    Dmitry Mamontov <d.slonyara@gmail.com>
  * @copyright 2015 Dmitry Mamontov <d.slonyara@gmail.com>
  * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @since     File available since Release 1.0.0
+ * @since     File available since Release 1.0.1
  */
 
 /**
@@ -47,9 +47,9 @@
  * @author    Dmitry Mamontov <d.slonyara@gmail.com>
  * @copyright 2015 Dmitry Mamontov <d.slonyara@gmail.com>
  * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version   Release: 1.0.0
+ * @version   Release: 1.0.1
  * @link      https://github.com/dmamontov/rsacrypt/
- * @since     Class available since Release 1.0.0
+ * @since     Class available since Release 1.0.1
  */
 class RsaCrypt
 {
@@ -91,7 +91,7 @@ class RsaCrypt
             throw new RuntimeException('Exec function not used.');
         }
         if (in_array($size, array(512, 1024, 2048)) === false) {
-            throw new ArgumentException('The key size can only be 512 bits, 1024 bits or 2048 bits. 2048 bits is recommended.');
+            throw new RuntimeException('The key size can only be 512 bits, 1024 bits or 2048 bits. 2048 bits is recommended.');
         }
 
         @exec("openssl genrsa -out private.pem $size 2>&1 && openssl rsa -in private.pem -out public.pem -outform PEM -pubout 2>&1", $out, $status);
@@ -115,7 +115,7 @@ class RsaCrypt
     final public function setPublicKey($key)
     {
         if (is_null($key) || empty($key)) {
-            throw new ArgumentException('Wrong key.');
+            throw new RuntimeException('Wrong key.');
         }
 
         $this->public = $key;
@@ -133,7 +133,7 @@ class RsaCrypt
     final public function setPrivateKey($key)
     {
         if (is_null($key) || empty($key)) {
-            throw new ArgumentException('Wrong key.');
+            throw new RuntimeException('Wrong key.');
         }
 
         $this->private = $key;
@@ -151,9 +151,9 @@ class RsaCrypt
     final public function encrypt($data)
     {
         if (is_null($data) || empty($data)) {
-            throw new ArgumentException('Needless to encrypt.');
+            throw new RuntimeException('Needless to encrypt.');
         } elseif (is_null($this->public) || empty($this->public)) {
-            throw new ArgumentException('You need to set the public key.');
+            throw new RuntimeException('You need to set the public key.');
         }
 
         $key = @file_get_contents($this->public);
@@ -177,9 +177,9 @@ class RsaCrypt
     final public function decrypt($data)
     {
         if (is_null($data) || empty($data)) {
-            throw new ArgumentException('Needless to encrypt.');
+            throw new RuntimeException('Needless to encrypt.');
         } elseif (is_null($this->private) || empty($this->private)) {
-            throw new ArgumentException('You need to set the private key.');
+            throw new RuntimeException('You need to set the private key.');
         }
 
         $key = @file_get_contents($this->private);
