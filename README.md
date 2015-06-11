@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/dmamontov/rsacrypt.svg?branch=master)](https://travis-ci.org/dmamontov/rsacrypt)
 [![Latest Stable Version](https://poser.pugx.org/dmamontov/rsacrypt/v/stable.svg)](https://packagist.org/packages/dmamontov/rsacrypt)
 [![License](https://poser.pugx.org/dmamontov/rsacrypt/license.svg)](https://packagist.org/packages/dmamontov/rsacrypt)
+[![Total Downloads](https://poser.pugx.org/dmamontov/rsacrypt/downloads)](https://packagist.org/packages/dmamontov/rsacrypt)
+[![PHP Classes](https://img.shields.io/badge/php-classes-blue.svg)](http://www.phpclasses.org/package/9206-PHP-Generate-RSA-keys-and-encrypt-data-using-OpenSSL.html)
 
 RSA Crypt
 =========
