@@ -47,9 +47,9 @@
  * @author    Dmitry Mamontov <d.slonyara@gmail.com>
  * @copyright 2015 Dmitry Mamontov <d.slonyara@gmail.com>
  * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
- * @version   Release: 1.0.2
+ * @version   Release: 1.1.0
  * @link      https://github.com/dmamontov/rsacrypt/
- * @since     Class available since Release 1.0.2
+ * @since     Class available since Release 1.1.0
  */
 class RsaCrypt
 {
